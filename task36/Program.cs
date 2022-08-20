@@ -5,15 +5,15 @@
 
 Console.Clear();
 
-int sizeArray = GetUserFromNumber("Введите длину массива: ", "Ошибка ввода!");
-int startArray = GetUserFromNumber("Введите минимальное число массива: ", "Ошибка ввода!");
-int endArray = GetUserFromNumber("Введите максимальное число массива: ", "Ошибка ввода!");
+int sizeArray = GetNumberFromUser("Введите длину массива: ", "Ошибка ввода!");
+int startArray = GetNumberFromUser("Введите минимальное число массива: ", "Ошибка ввода!");
+int endArray = GetNumberFromUser("Введите максимальное число массива: ", "Ошибка ввода!");
 int[] array = GetArray(sizeArray, startArray, endArray);
 int sumNumOfOddPositions = GetSumNumberOddPossition(array);
 
 Console.WriteLine($"[{String.Join(", ", array)}] -> {sumNumOfOddPositions}");
 
-int GetUserFromNumber(string message, string errorMessage)
+int GetNumberFromUser(string message, string errorMessage)
 {
     while (true)
     {
