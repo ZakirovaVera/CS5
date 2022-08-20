@@ -30,7 +30,7 @@ int[] GetArray(int size, int minValue, int maxValue)
     int[] res = new int[size];
     for (int i = 0; i < res.Length; i++)
     {
-        res[i] = new Random().Next(minValue, maxValue);
+        res[i] = new Random().Next(minValue, maxValue + 1);
     }
     return res;
 }
