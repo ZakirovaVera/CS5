@@ -4,7 +4,7 @@
 
 Console.Clear();
 
-int sizeArray = GetSizeArrayFromUser("Введите длину массива: ", "Ошибка ввода!");
+int sizeArray = GetNumberFromUser("Введите длину массива: ", "Ошибка ввода!");
 double startArray = GetNumberFromUser("Введите минимальное число массива: ", "Ошибка ввода!");
 double endArray = GetNumberFromUser("Введите максимальное число массива: ", "Ошибка ввода!");
 double[] array = GetArray(sizeArray, startArray, endArray);
@@ -12,24 +12,12 @@ double diffBetweenMinMax = GetDiffBetweenMinMax(array);
 
 Console.WriteLine($"[{String.Join(", ", array)}] -> {diffBetweenMinMax}");
 
-int GetSizeArrayFromUser(string message, string errorMessage)
+int GetNumberFromUser(string message, string errorMessage)
 {
     while (true)
     {
         Console.WriteLine(message);
         bool isCorrect = int.TryParse(Console.ReadLine(), out int userNumber);
-        if (isCorrect)
-            return userNumber;
-        Console.WriteLine(errorMessage);
-    }
-}
-
-double GetNumberFromUser(string message, string errorMessage)
-{
-    while (true)
-    {
-        Console.WriteLine(message);
-        bool isCorrect = double.TryParse(Console.ReadLine(), out double userNumber);
         if (isCorrect)
             return userNumber;
         Console.WriteLine(errorMessage);
