@@ -41,7 +41,7 @@ double[] GetArray(int size, double minValue, double maxValue)
     double[] res = new double[size];
     for (int i = 0; i < res.Length; i++)
     {
-        res[i] = new Random().NextDouble() * (maxValue + 1 - minValue) + minValue;
+        res[i] = Math.Round(new Random().NextDouble() * (maxValue - minValue) + minValue, 4);
     }
     return res;
 }
@@ -57,5 +57,5 @@ double GetDiffBetweenMinMax(double[] arr)
         if (el > maxNum) maxNum = el;
         if (el < minNum) minNum = el;
     }
-    return diffMinMax = maxNum - minNum;
+    return diffMinMax = Math.Round(maxNum - minNum, 4);
 }
